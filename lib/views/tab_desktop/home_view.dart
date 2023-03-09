@@ -14,7 +14,7 @@ import 'package:swiggy_ui/views/mobile/swiggy/top_offer_view.dart';
 import 'package:swiggy_ui/widgets/custom_divider_view.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({Key key, this.expandFlex = 4}) : super(key: key);
+  const HomeView({Key? key, this.expandFlex = 4}) : super(key: key);
 
   final int expandFlex;
 
@@ -23,7 +23,7 @@ class HomeView extends StatelessWidget {
     return Expanded(
       flex: expandFlex,
       child: Container(
-        padding: EdgeInsets.only(top: 40.0, bottom: 20.0),
+        padding: const EdgeInsets.only(top: 40.0, bottom: 20.0),
         color: Colors.grey[50],
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,30 +47,30 @@ class _Body extends StatelessWidget {
           children: [
             OfferBannerView(),
             PopularBrandsView(),
-            CustomDividerView(),
+            const CustomDividerView(),
             InTheSpotlightView(),
-            CustomDividerView(),
+            const CustomDividerView(),
             PopularCategoriesView(),
-            CustomDividerView(),
-            SwiggySafetyBannerView(),
+            const CustomDividerView(),
+            const SwiggySafetyBannerView(),
             BestInSafetyViews(),
-            CustomDividerView(),
+            const CustomDividerView(),
             TopOffersViews(),
-            CustomDividerView(),
-            FoodGroceriesAvailabilityView(),
-            CustomDividerView(),
+            const CustomDividerView(),
+            const FoodGroceriesAvailabilityView(),
+            const CustomDividerView(),
             RestaurantVerticalListView(
               title: 'Popular Restaurants',
               restaurants: SpotlightBestTopFood.getPopularAllRestaurants(),
             ),
-            CustomDividerView(),
+            const CustomDividerView(),
             RestaurantVerticalListView(
               title: 'All Restaurants Nearby',
               restaurants: SpotlightBestTopFood.getPopularAllRestaurants(),
               isAllRestaurantNearby: true,
             ),
-            SeeAllRestaurantBtn(),
-            LiveForFoodView()
+            const SeeAllRestaurantBtn(),
+            const LiveForFoodView()
           ],
         ),
       ),
@@ -89,28 +89,28 @@ class _Search extends StatelessWidget {
         borderRadius: BorderRadius.circular(13.0),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey[300],
+            color: Colors.grey[300]!,
             blurRadius: 2.0,
             spreadRadius: 0.0,
-            offset: Offset(2.0, 2.0),
+            offset: const Offset(2.0, 2.0),
           )
         ],
       ),
       child: Row(
         children: [
-          Icon(Icons.search_outlined),
+          const Icon(Icons.search_outlined),
           UIHelper.horizontalSpaceMedium(),
           Expanded(
             child: Text(
               'What would you like to eat?',
-              style: Theme.of(context).textTheme.subtitle1.copyWith(
+              style: Theme.of(context).textTheme.subtitle1!.copyWith(
                     color: Colors.grey[700],
                     fontWeight: FontWeight.bold,
                   ),
             ),
           ),
           UIHelper.horizontalSpaceMedium(),
-          Icon(Icons.filter_list_outlined)
+          const Icon(Icons.filter_list_outlined)
         ],
       ),
     );

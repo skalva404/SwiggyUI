@@ -1,12 +1,11 @@
-import 'package:flutter/foundation.dart';
 import 'package:swiggy_ui/models/spotlight_best_top_food.dart';
 
 import 'indian_food.dart';
 
 class AllRestaurant {
   const AllRestaurant({
-    @required this.image,
-    @required this.name,
+    required this.image,
+    required this.name,
   });
 
   final String image;
@@ -130,7 +129,7 @@ class AllRestaurant {
   }
 
   static List<SpotlightBestTopFood> getRestaurantListThree() {
-    return [
+    return const [
       SpotlightBestTopFood(
         image: 'assets/images/food4.jpg',
         name: 'Biryani Expresss',
@@ -187,9 +186,9 @@ class AllRestaurant {
 
 class LargeRestaurantBanner {
   const LargeRestaurantBanner({
-    @required this.image,
-    @required this.title,
-    @required this.subtitle,
+    required this.image,
+    required this.title,
+    required this.subtitle,
   });
 
   final String image;
@@ -227,7 +226,7 @@ class LargeRestaurantBanner {
   }
 
   static List<LargeRestaurantBanner> getPepsiSaveOurRestaurants() {
-    return [
+    return const [
       LargeRestaurantBanner(
         image: 'assets/images/food1.jpg',
         title: 'Faasos',

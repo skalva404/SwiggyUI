@@ -5,6 +5,8 @@ import 'package:swiggy_ui/utils/ui_helper.dart';
 import 'package:swiggy_ui/widgets/custom_divider_view.dart';
 
 class GenieScreen extends StatelessWidget {
+  const GenieScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final services = Genie.getGenieServices();
@@ -20,7 +22,7 @@ class GenieScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               IconButton(
-                icon: Icon(Icons.arrow_back, color: Colors.white),
+                icon: const Icon(Icons.arrow_back, color: Colors.white),
                 onPressed: () {
                   Navigator.pop(context);
                 },
@@ -41,7 +43,7 @@ class GenieScreen extends StatelessWidget {
                                 'Genie',
                                 style: Theme.of(context)
                                     .textTheme
-                                    .headline4
+                                    .headline4!
                                     .copyWith(color: Colors.white),
                               ),
                               UIHelper.horizontalSpaceSmall(),
@@ -56,7 +58,7 @@ class GenieScreen extends StatelessWidget {
                           Text(
                             'Anything you need, delivered',
                             style:
-                                Theme.of(context).textTheme.bodyText1.copyWith(
+                                Theme.of(context).textTheme.bodyText1!.copyWith(
                                       color: Colors.grey[200],
                                       fontSize: 17.0,
                                     ),
@@ -73,17 +75,17 @@ class GenieScreen extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            _HeaderView(
+                            const _HeaderView(
                               title: 'Pickup or Drop any items',
                               buttonTitle: 'ADD PICKUP DROP DETAILS',
                             ),
-                            CustomDividerView(dividerHeight: 3.0),
+                            const CustomDividerView(dividerHeight: 3.0),
                             UIHelper.verticalSpaceMedium(),
                             Text(
                               'Some things we can pick or drop for you',
                               style: Theme.of(context)
                                   .textTheme
-                                  .bodyText1
+                                  .bodyText1!
                                   .copyWith(fontSize: 14.0),
                             ),
                             UIHelper.verticalSpaceMedium(),
@@ -92,7 +94,7 @@ class GenieScreen extends StatelessWidget {
                               child: ListView.builder(
                                 itemCount: services.length,
                                 scrollDirection: Axis.horizontal,
-                                itemBuilder: (context, index) => Container(
+                                itemBuilder: (context, index) => SizedBox(
                                   width: 80.0,
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -102,7 +104,7 @@ class GenieScreen extends StatelessWidget {
                                           padding: const EdgeInsets.all(10.0),
                                           decoration: BoxDecoration(
                                             color: Colors.grey[200],
-                                            boxShadow: <BoxShadow>[
+                                            boxShadow: const <BoxShadow>[
                                               BoxShadow(
                                                 color: Colors.grey,
                                                 blurRadius: 3.0,
@@ -124,7 +126,7 @@ class GenieScreen extends StatelessWidget {
                                         maxLines: 2,
                                         style: Theme.of(context)
                                             .textTheme
-                                            .bodyText1
+                                            .bodyText1!
                                             .copyWith(fontSize: 13.5),
                                       )
                                     ],
@@ -142,7 +144,7 @@ class GenieScreen extends StatelessWidget {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10.0),
                         ),
-                        child: _HeaderView(
+                        child: const _HeaderView(
                           title: 'Buy Anything from any store',
                           buttonTitle: 'FIND A STORE',
                         ),
@@ -164,9 +166,9 @@ class _HeaderView extends StatelessWidget {
   final String buttonTitle;
 
   const _HeaderView({
-    Key key,
-    @required this.title,
-    @required this.buttonTitle,
+    Key? key,
+    required this.title,
+    required this.buttonTitle,
   }) : super(key: key);
 
   @override
@@ -176,7 +178,7 @@ class _HeaderView extends StatelessWidget {
       children: <Widget>[
         Text(
           title,
-          style: Theme.of(context).textTheme.headline6.copyWith(
+          style: Theme.of(context).textTheme.headline6!.copyWith(
                 fontSize: 17.0,
                 fontWeight: FontWeight.bold,
               ),
@@ -192,7 +194,7 @@ class _HeaderView extends StatelessWidget {
               buttonTitle,
               style: Theme.of(context)
                   .textTheme
-                  .subtitle2
+                  .subtitle2!
                   .copyWith(color: Colors.white, fontSize: 14.0),
             ),
             onPressed: () {},

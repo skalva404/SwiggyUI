@@ -1,5 +1,5 @@
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:swiggy_ui/widgets/responsive.dart';
 
 import '../groceries/grocery_screen.dart';
@@ -11,6 +11,8 @@ class OfferBannerView extends StatelessWidget {
     'assets/images/banner3.jpg',
     'assets/images/banner4.jpg',
   ];
+
+  OfferBannerView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class OfferBannerView extends StatelessWidget {
           itemHeight: 100,
           duration: 500,
           itemWidth: double.infinity,
-          pagination: SwiperPagination(),
+          pagination: const SwiperPagination(),
           itemCount: images.length,
           itemBuilder: (BuildContext context, int index) => Image.asset(
             images[index],
@@ -42,7 +44,7 @@ class OfferBannerView extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => GroceryScreen(),
+            builder: (context) => const GroceryScreen(),
           ),
         );
       },
