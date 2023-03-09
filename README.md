@@ -2,6 +2,8 @@
 
 SwiggyUI App is a UI clone of a famous food ordering app called [Swiggy](https://play.google.com/store/apps/details?id=in.swiggy.android) built using Flutter. Show some ❤️ and star ⭐ the repo if you liked it, it makes me to share more open source flutter projects.
 
+
+
 ![Github Followers](https://img.shields.io/github/followers/vinothvino42?label=Follow&style=social)
 ![GitHub stars](https://img.shields.io/github/stars/vinothvino42/SwiggyUI?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/vinothvino42/SwiggyUI?style=social)
